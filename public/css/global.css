@@ -1,0 +1,384 @@
+/* =======================================================
+==========================================================
+================== Global Css ============================
+==========================================================
+======================================================== */
+
+
+/* section {
+	padding-top: 100px;
+	padding-bottom: 75px;
+} */
+
+.breadcrumb-hr::before {
+    float: left;
+    padding: 0 .5rem;
+    color: #6c757d;
+    content: var(--bs-breadcrumb-divider, "/");
+}
+
+.box-shadow-none {
+    box-shadow: none !important;
+}
+
+.rounded-0>.col-6 .col-12>.form-control {
+    border-radius: none !important;
+}
+
+/* List Group */
+.list-group-transparent .list-group-item {
+    background-color: transparent !important;
+    transform: translateX(0);
+}
+
+.list-group-transparent .list-group-item {
+    background-color: transparent !important;
+}
+
+.list-group-border-0 .list-group-item {
+    border: 0 !important;
+}
+
+/* ======== Transition Timing-Function ======== */
+.group-hover:hover .timing-function-ease-out,
+.timing-function-ease-out:hover {
+    transition-timing-function: ease-out !important;
+}
+
+.group-hover:hover .timing-function-ease-in-out,
+.timing-function-ease-in-out:hover {
+    transition-timing-function: ease-in-out;
+}
+
+.group-hover:hover .timing-function-ease-in,
+.timing-function-ease-in:hover {
+    transition-timing-function: ease-in;
+}
+
+.group-hover:hover .timing-function-linear,
+.timing-function-linear:hover {
+    transition-timing-function: linear;
+}
+
+/*======== positioning ========*/
+.top-auto {
+    top: auto;
+}
+
+.start-auto {
+    left: auto;
+}
+
+.bottom-auto {
+    bottom: auto;
+}
+
+.end-auto {
+    right: auto;
+}
+
+.top-25 {
+    top: 25%;
+}
+
+.start-25 {
+    left: 25%;
+}
+
+.bottom-25 {
+    bottom: 25%;
+}
+
+.end-25 {
+    right: 25%;
+}
+
+.top-100 {
+    top: 100% !important;
+}
+
+.top-115 {
+    top: 115% !important;
+}
+
+.top-130 {
+    top: 130% !important;
+}
+
+.top-140 {
+    top: 140% !important;
+}
+
+.group-hover:hover .hover-top-0,
+.hover-top-0:hover {
+    top: 0 !important;
+}
+
+.group-hover:hover .hover-top-85,
+.hover-top-85:hover {
+    top: 85% !important;
+}
+
+/*======== visibility ========*/
+.group-hover:hover .hover-visible,
+.hover-visible:hover {
+    visibility: visible !important
+}
+
+/*======== margin ( + / - ) & hover ========*/
+
+/*------ margin-top ------*/
+.group-hover:hover .hover-mt-25,
+.hover-mt-25:hover {
+    margin-top: 2.5rem;
+}
+
+.group-hover:hover .hover-mt-n1,
+.hover-mt-n1:hover {
+    margin-top: -1rem !important;
+}
+
+.group-hover:hover .hover-mt-n15,
+.hover-mt-n15:hover {
+    margin-top: -1.5rem;
+}
+
+.group-hover:hover .hover-mt-n2,
+.hover-mt-n2:hover {
+    margin-top: -2rem;
+}
+
+.group-hover:hover .hover-mt-n25,
+.hover-mt-n25:hover {
+    margin-top: -2.5rem;
+}
+
+.group-hover:hover .hover-mt-n3,
+.hover-mt-n3:hover {
+    margin-top: -3rem;
+}
+
+.top-n2 {
+    margin-bottom: -2rem !important;
+}
+
+/*------ margin-bottom ------*/
+.margin-b-n25 {
+    margin-bottom: -2.5rem;
+}
+
+/* .margin-top: 2.5rem; */
+/* .margin-bottom: -3rem !important; */
+.margin-b-n25 {
+    margin-bottom: -2.5rem;
+}
+
+.margin-b-n25 {
+    margin-bottom: -2.5rem;
+}
+
+.group-hover:hover .hover-mb-25,
+.hover-mb-25:hover {
+    margin-bottom: 2.5rem;
+}
+
+.group-hover:hover .hover-mb-3,
+.hover-mb-3:hover {
+    margin-bottom: 3rem;
+}
+
+.group-hover:hover .hover-mb-n05,
+.hover-mb-n05:hover {
+    margin-bottom: -.5rem;
+}
+
+.group-hover:hover .hover-mb-n1,
+.hover-mb-n1:hover {
+    margin-bottom: -1rem;
+}
+
+.group-hover:hover .hover-mb-n15,
+.hover-mb-n15:hover {
+    margin-bottom: -1.5rem;
+}
+
+.group-hover:hover .hover-mb-n2,
+.hover-mb-n2:hover {
+    margin-bottom: -2rem;
+}
+
+.group-hover:hover .hover-mb-n3,
+.hover-mb-n3:hover {
+    margin-bottom: -3rem;
+}
+
+/* ======== display ( block / none ) -hover ======== */
+.group-hover:hover .hover-block,
+.hover-block:hover {
+    display: block !important;
+}
+
+/* ======== z-index ======== */
+
+.group-hover:hover .hover-z-index-1,
+.hover-z-index-1:hover {
+    z-index: 10;
+}
+
+/* ===== hover-effect ===== */
+.hover-bg-dark:hover {
+    background-color: black !important;
+    color: white;
+}
+
+.group-hover:hover .hover-disabled,
+.hover-disabled:hover {
+    background-color: #ebe9eb !important;
+    color: inherit !important;
+    cursor: not-allowed !important;
+    opacity: .5 !important;
+}
+
+/* ===== height ===== */
+.h-1 {
+    height: .25rem !important;
+}
+
+.h-2 {
+    height: .5rem !important;
+}
+
+.h-3 {
+    height: .75rem !important;
+}
+
+.h-4 {
+    height: 1rem !important;
+}
+
+.h-5 {
+    height: 1.5rem !important;
+}
+
+.h-6 {
+    height: 2rem !important;
+}
+
+.h-7 {
+    height: 2.75rem !important;
+}
+
+.h-8 {
+    height: 3rem !important;
+}
+
+.h-9 {
+    height: 3.5rem !important;
+}
+
+.h-10 {
+    height: 5rem !important;
+}
+
+.h-11 {
+    height: 6.4rem !important;
+}
+
+.max-h-7 {
+    max-height: 3rem !important;
+}
+
+/*  ==== Width ====  */
+.w-1 {
+    width: .25rem !important;
+}
+
+.w-2 {
+    width: .5rem !important;
+}
+
+.w-3 {
+    width: .75rem !important;
+}
+
+.w-4 {
+    width: 1rem !important;
+}
+
+.w-5 {
+    width: 1.5rem !important;
+}
+
+.w-6 {
+    width: 2rem !important;
+}
+
+.w-7 {
+    width: 2.75rem !important;
+}
+
+.w-8 {
+    width: 3rem !important;
+}
+
+.w-9 {
+    width: 3.5rem !important;
+}
+
+.w-10 {
+    width: 5rem !important;
+}
+
+.w-11 {
+    width: 6.4rem !important;
+}
+
+.min-width-auto {
+
+    min-width: auto !important;
+}
+
+
+/* ======== line-hight ======== */
+
+.l-h-1 {
+    line-height: 1rem !important;
+}
+
+.l-h-2 {
+    line-height: 1.5rem !important;
+}
+
+.l-h-3 {
+    line-height: 1.75rem !important;
+}
+
+.l-h-4 {
+    line-height: 2rem !important;
+}
+
+.l-h-5 {
+    line-height: 2.25rem !important;
+}
+
+.l-h-6 {
+    line-height: 2.5rem !important;
+}
+
+.l-h-7 {
+    line-height: 2.75rem !important;
+}
+
+.l-h-8 {
+    line-height: 3rem !important;
+}
+
+.l-h-9 {
+    line-height: 3.25rem !important;
+}
+
+.l-h-10 {
+    line-height: 3.5rem !important;
+}
+
+/*==== transform ====*/

@@ -1,0 +1,328 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    ;
+}
+
+.google-fonts {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+body {
+    font-family: Rubik, sans-serif;
+}
+
+.bg-red{
+    background-color: rgb(245, 0, 0);
+    color: rgba(255,255,255,1);
+    border-color: rgba(245,0,0,1);
+}
+/* H */
+.modal-h-300{
+    height: 300px!important;
+}
+/* z-index */
+.z-index-10{
+    z-index:10;
+}
+.group-hover:hover .hover-d-block,
+.hover-d-block:hover{
+    display:block!important;
+}
+/* hover btn */
+.group-hover:hover .hover-bg-danger, .hover-bg-danger:hover{
+    background-color: rgba(245, 0, 0, 0.726)!important;
+    color: rgba(255, 255, 255, 1) !important;
+   
+}
+.max-width-70{
+    max-width: 70%!important;
+}
+/*======== H ========*/
+ .modal-h-300{
+    max-height: 260px!important;
+    min-height: 210px!important;
+    }
+
+/*======== header ========*/
+/* placeholder */
+.placeholder-sm::placeholder {
+    font-size: .8rem!important;
+    font-style: italic;
+}
+#main-nav-user a {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+    padding: .5rem .8rem;
+}
+
+#category-search-box select,
+#category-search-box input,
+#category-search-box button {
+    box-shadow: none;
+}
+
+.offcanvas{
+	width:300px;
+}
+.accordion-button::after{
+	width: .7rem;
+    height: .7rem;
+	background-size: .7rem;
+}
+.accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color: inherit;
+}
+
+#main-nav-user a:hover {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
+}
+
+#MainCarousel1 .theme-size {
+    height: 350px;
+}
+
+#carousel-slide button.active {
+    width: 3rem!important;
+    height: 2rem;
+    transition: width .9s;
+    border-radius: 0 25px 0 25px!important;
+    background-color: #03df15;
+}
+
+#carousel-slide button.active {
+    width: 3rem!important;
+    height: 2rem;
+    transition: width .9s;
+    border-radius: 0 25px 0 25px!important;
+    background-color: #03df15;
+}
+/*======== product-category-list ========*/
+.margin-b-n2{
+    margin-bottom:-2rem;
+}
+
+/*======== Product details ========*/
+
+.hover-bg-transparent:hover{
+   background-color: transparent !important;
+}
+
+/* productDetailsdetails --- hover*/
+.hover-btn-bg-white:hover{
+    background-color:white!important;
+  }
+.hover-border-red:hover{
+    border: 1px solid rgba(245,0,0,1)!important;
+   }
+.hover-text-red:hover{
+   color:rgba(245,0,0,1)!important;
+   }
+.hover-btn-bg-black:hover{
+    background-color:black!important;
+    color:white;
+}
+#productDetailsdetails button.hover-text-black:hover{
+    color: rgba(22,22,22,1) !important;
+}
+/*========for-cart-owl-carousel========*/
+.right-n10 {
+    right: -5% !important;
+}.left-n10 {
+    left: -5% !important;
+}
+.group-btn-hover:hover .hover-right-0,
+.hover-right-0:hover{
+    right:2% !important;
+}
+.group-btn-hover:hover .hover-left-0,
+.hover-left-0:hover{
+    left:2% !important;
+}
+.group-hover-btn-opacity:hover .hover-opacity-100,
+.hover-opacity-100:hover{
+    opacity:1!important;
+}
+.group-hover-btn-opacity:hover .hover-opacity-50,
+.hover-opacity-50:hover{
+    opacity:.5!important;
+}
+.hover-btn-opacity-100:hover{
+    opacity:1!important;
+}
+.transition-ease-in-out-600{
+	transition: all .6s ease-in-out;
+}
+.transition-ease-600{
+	transition: all .6s ease;
+}
+.transition-ease-700{
+	transition: all .7s ease;
+}
+.transition-ease-in-out-700{
+	transition: all .7s ease-in-out;
+}
+
+/* cart/checkout */
+.border-dotted{
+    border-style: dotted!important;
+}
+.border-dashed{
+   border-style: dashed!important;
+}
+
+/* --- Footer -- */
+.theme-footer-link .list-group-item{
+	color:#aaaaaa!important;
+	padding:.25rem 0!important;
+}
+.theme-footer-link .list-group-item:hover{
+	color:#f50000!important;
+}
+.text-red-danger{
+    color:#f50000!important;
+}
+.bg-red-danger{
+   background-color:#f50000!important;
+}
+.ms-n1 {
+    margin-left: -.25rem;
+}
+
+.ms-n2 {
+    margin-left: -.5rem;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 2px;
+}
+
+.max-height{
+  max-height: 200px!important;
+}
+.p-top-6rem{
+    padding-top:6.25rem!important;
+}
+/* ===== media quare ===== */
+    @media (min-width: 576px){
+    /* ===== F ===== */
+    /* -- font-size -- */
+	
+	.h-4{
+		font-size:1.05rem!important;
+	}
+    /* ===== H ===== */
+    .modal-h-300{
+    max-height: 260px!important;
+    min-height: 210px!important;
+    }
+    /* -- height -- */
+    .max-height{
+    max-height: 200px!important;
+    }
+    
+    /* ===== W ===== */
+    /* -- width -- */
+    .w-sm-auto{
+		     width: auto!important;  
+	}
+    .w-sm-100{
+		 width: 100%!important;       
+	}
+	.w-sm-75{
+		width: 75%!important;
+	}
+	.w-sm-25{
+		width: 25%!important;
+    }
+    .w-11 {
+    width:  rem!important;
+    }
+ }
+@media (min-width:768px){
+    /* ===== F ===== */
+    /* -- font-size -- */
+	.h-md-2{
+		font-size:1.5rem!important;
+	}
+	.h-md-4{
+		font-size:1.2rem!important;
+	}
+	.h-md-5{
+		font-size:1rem!important;
+	}
+    
+    /* ===== P ===== */
+    .p-md-top-10rem{
+        padding-top:10rem!important;
+    }
+    /* ===== W ===== */
+    /* -- width -- */
+    .w-md-auto{
+		width: auto!important;      
+	}
+    .w-md-100{
+		 width: 100%!important;       
+	}
+	.w-md-75{
+		width: 75%!important;
+	}
+	.w-md-50{
+		width: 50%!important;
+    }
+	.w-md-25{
+		width: 25%!important;
+    }
+    .w-11 {
+    width: 6.4rem!important;
+    }
+    
+}
+
+@media (min-width: 992px){
+    /* ===== F ===== */
+    /* -- font-size -- */
+    .h-lg-2{
+		font-size:1.5rem!important;
+	}
+	.h-lg-4{
+		font-size:0.8rem!important;
+	}
+	.h-lg-5{
+		font-size:0.7rem!important;
+	}
+    /* ===== H ===== */
+    /* -- height -- */
+     .max-height {
+    max-height: 150px!important;
+    }
+    /* ===== W ===== */
+    /* -- width -- */
+	.w-lg-auto{
+		width: auto!important;    
+	}
+    .w-lg-100{
+		 width: 100% !important;     
+	}
+	.w-lg-75{
+		width: 75%!important;
+	}
+	.w-lg-50{
+		width: 50% !important;
+    }
+	.w-lg-25{
+		width: 25%!important;
+    }
+    .w-11 {
+    width: 6.4rem!important;
+    }
+    .max-width-70{
+    max-width: 70%!important;
+    }
+}
