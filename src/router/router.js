@@ -12,6 +12,7 @@ import SingleProduct from '../components/views/details/SingleProduct.vue'
 
 
 import Login from '../views/auth/Login.vue'
+import Profile from '../views/auth/Profile.vue'
 
 import Dashboard from '../views/dashboard/Dashboard.vue'
 
@@ -34,12 +35,32 @@ const routes = [
     {
         path: '/shop',
         name: 'shop',
-        component: Shop
+        component: Shop,
+        meta: {
+            breadcrumb: [
+                {
+                    text: 'Shop',
+                    route: 'shop'
+                }
+            ]
+        }
     },
     {
         path: '/shop/singleProduct/:id',
         name: 'singleProduct',
-        component: SingleProduct
+        component: SingleProduct,
+        meta: {
+            breadcrumb: [
+                {
+                    text: 'Shop',
+                    route: 'shop'
+                },
+                {
+                    text: 'Single Product',
+                    route: 'singleProduct'
+                }
+            ]
+        }
     },
     // {
     //     path: '/shop/:id',
@@ -53,6 +74,10 @@ const routes = [
     // start authenticate
     {
         path: '/login', component: Login, name: 'login',
+    },
+    {
+        path: '/dashboard/profile', component: Profile, name: 'profile',
+        meta: { requiresAuth: true, role: 'admin' }
     },
     // end authenticate
 
@@ -94,7 +119,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
 

@@ -27,7 +27,7 @@
 <style>
 	@import "bootstrap/dist/css/bootstrap.min.css";
 	@import "../../assets/css/bootstrap-extensions.css";
-	@import "../../../public/css/global.css";
-	@import "../../../public/css/style.css";
+	@import "../../assets/css/global.css";
+	@import "../../assets/css/style.css";
 </style>
 

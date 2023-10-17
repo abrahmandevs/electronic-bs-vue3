@@ -106,7 +106,7 @@
 						<router-link to="/login" class="block px-3 py-2 font-semibold text-black hover:text-gray-500 transition-all duration-300">login</router-link>
 					</div>
 					<div class="" v-if="auth.isAuthenticated">
-						<router-link v-if="auth.roleCecker('admin')" to="/" class="block px-3 py-1.5 text-black hover:text-gray-500 transition-all duration-300">Profile</router-link>
+						<router-link v-if="auth.roleCecker('admin')" :to="{ name: 'profile' }" class="block px-3 py-1.5 text-black hover:text-gray-500 transition-all duration-300">Profile</router-link>
 
 						<router-link v-if="auth.roleCecker('admin')" to="/" class="block px-3 py-1.5 text-black hover:text-gray-500 transition-all duration-300">Settings</router-link>
 

@@ -60,7 +60,7 @@
 									<i class="fas fa-bars"></i>
 								</button>
 							</div>
-							<div class="col col-xl-8 px-0">
+							<div class="col px-0">
 								<form action="" class="row g-0 border" id="category-search-box">
 									<div class="col-4 d-none d-lg-block border-end">
 										<select name="" id="" class="form-select placeholder-sm rounded-0 border-0">

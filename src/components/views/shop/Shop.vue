@@ -418,7 +418,7 @@
 						<div class="row justify-content-center gap-2 gap-sm-0 pb-4">
 							<div class="col-8 col-sm-4 col-md-3 p-0" v-for="(product, index) in products" :key="index">
 								<div class="card rounded-0 group-hover p-2 h-100">
-									<div @click.stop="singelProducView(product.id)" class="overflow-hidden position-relative">
+									<div class="overflow-hidden position-relative">
 										<div class="overflow-hidden text-center w-100" style="height: 100px">
 											<img class="h-100 w-100 object-fit-contain" :src="product['image']" />
 											<!-- <img class="h-100 w-100 object-fit-contain" :src="product['thumbnail']" /> -->
@@ -454,7 +454,7 @@
 												<button @click="cart.addItem(product)" class="text-decoration-none text-dark fw-bold">add to cart</button>
 												<div class="mx-auto"></div>
 												<!-- <router-link :to="{ name: 'singleProduct' }">quick view</router-link> -->
-												<!-- <router-link :to="{ name: 'singleProduct', params: { id: product['id'], slug: slug.slugTxt(product['title']) } }" class="text-decoration-none text-dark fw-bold">quick view</router-link> -->
+												<router-link :to="'/shop/singleProduct/' + product['id']" class="text-decoration-none text-dark fw-bold">quick view</router-link>
 											</div>
 										</div>
 									</div>
@@ -473,6 +473,7 @@
 				</div>
 			</div>
 		</section>
+		<RouterView />
 	</Layout>
 </template>
 <style scoped>

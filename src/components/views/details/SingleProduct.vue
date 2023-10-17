@@ -21,28 +21,30 @@
 		category: "",
 	})
 
+	// const product = reactive({})
+
 	const count = ref(0)
 
-	onMounted(() => {
-		axios
-			.get(`https://dummyjson.com/products/${id}`)
-			.then((res) => {
-				Object.assign(product, res.data)
-			})
-			.catch((error) => console.log(error))
-	})
-	//onBeforeMount(() => {
-	// 	async function productList() {
-	// 		const url = `https://dummyjson.com/products/${id}`
-	// 		// const url = `https://dummyjson.com/products/2`
-	// 		const res = await axios.get(url)
-	// 		if (200 == res.status) {
+	// onMounted(() => {
+	// 	axios
+	// 		.get(`http://127.0.0.1:8000/api/products/${id}`)
+	// 		.then((res) => {
 	// 			Object.assign(product, res.data)
-	// 		}
-	// 	}
-	// 	productList()
+	// 		})
+	// 		.catch((error) => console.log(error))
 	// })
-	import SwiperC from "../../swiper/SwiperC.vue"
+	onBeforeMount(() => {
+		async function productList() {
+			const url = `https://dummyjson.com/products/${id}`
+			// const url = `https://dummyjson.com/products/2`
+			const res = await axios.get(url)
+			if (200 == res.status) {
+				Object.assign(product, res.data)
+			}
+		}
+		productList()
+	})
+	// import SwiperC from "../../swiper/SwiperC.vue"
 </script>
 <template>
 	<Layout>
@@ -487,8 +489,8 @@
 			</div>
 		</section>
 		<!-- recomanded product -->
-		<SwiperC>
-			<!-- <swiper-slide v-for="(slideContent, index) in 10" :key="index" :virtualIndex="index">
+		<!-- <SwiperC> -->
+		<!-- <swiper-slide v-for="(slideContent, index) in 10" :key="index" :virtualIndex="index">
 				<div class="card rounded-0 group-hover p-3">
 					<div class="overflow-hidden position-relative">
 						<img class="w-100" src="/images/demo/electronic-lp4.jpg" />
@@ -517,7 +519,7 @@
 					</div>
 				</div>
 			</swiper-slide> -->
-		</SwiperC>
+		<!-- </SwiperC> -->
 		<section class="py-4 px-3">
 			<h4 class="fw-bolder text-capitalize text-center py-2">you may also like</h4>
 			<div class="container-lg position-relative group-btn-hover overflow-hidden group-hover-btn-opacity border p-0" id="autoCarousel"></div>

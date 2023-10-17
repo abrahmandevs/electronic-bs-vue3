@@ -1,11 +1,10 @@
 <script setup>
-	import "../../assets/css/tailwind.css"
 	import { menuConfigStore } from "../../store/menuConfigStore"
-	const menuConfig = menuConfigStore
 	import AppBackTopbar from "../headers/AppBackTopbar.vue"
 	import AppSidebar from "../sidebers/AppSidebar.vue"
-
 	import Breadcrumb from "../breadcrumb/Breadcrumb.vue"
+
+	const menuConfig = menuConfigStore
 </script>
 <template>
 	<div id="" class="flex flex-col bg-[#161a1d] text-white h-screen">
@@ -34,3 +33,6 @@
 		</div>
 	</div>
 </template>
+<style scoped>
+	@import "../../assets/css/tailwind.css";
+</style>
