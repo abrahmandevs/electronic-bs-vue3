@@ -1,5 +1,5 @@
 <script setup>
-	import { reactive, ref, defineProps } from "vue"
+	import { defineProps } from "vue"
 	import { ChevronRightIcon } from "@heroicons/vue/24/outline"
 	import { useRoute } from "vue-router"
 	const route = useRoute()
