@@ -1,73 +1,33 @@
 <script setup>
 	import { ref } from "vue"
-
+	import Layout from "../public/Layout.vue"
 	import { authStore } from "../../store/authStore"
 	const auth = authStore
 
-	const name = ref("kminchelle")
-	const password = ref("0lelplR")
-	/* const register = () => {
-		try {
-			authStore.registerUser(email.value, password.value)
-			// Redirect to the login page or dashboard upon successful registration
-		} catch (error) {
-			console.error(error.message)
-		}
-	} */
+	const userEmail = ref("john@doe.com")
+	const userPassword = ref("12345")
 </script>
 
 <template>
-	<div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-		<div class="sm:mx-auto sm:w-full sm:max-w-sm">
-			<img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-		</div>
-
-		<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-			<form @submit.prevent="auth.authenticate(name, password)" class="space-y-6">
-				<div>
-					<label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
-					<div class="mt-2">
-						<input id="name" name="name" type="name" autocomplete="name" required="" v-model="name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-					</div>
+	<Layout>
+		<div class="w-50 m-auto d-flex flex-col align-items-center justify-content-center py-4">
+			<!-- login form-->
+			<form @submit.prevent="auth.authenticate(userEmail, userPassword)" class="row m-auto">
+				<div class="">
+					<label class="form-label">Email</label>
+					<input type="text" name="userEmail" v-model="userEmail" class="form-control box-shadow-none" placeholder="Email" />
 				</div>
-
-				<div>
-					<div class="flex items-center justify-between">
-						<label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-						<div class="text-sm">
-							<p class="font-semibold text-indigo-600 hover:text-indigo-500">{{ auth.message ?? "" }}</p>
-						</div>
-					</div>
-					<div class="mt-2">
-						<input
-							id="password"
-							name="password"
-							v-model="password"
-							type="password"
-							autocomplete="current-password"
-							required=""
-							class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-						/>
-					</div>
+				<div class="">
+					<label class="form-label">Password</label>
+					<input type="password" name="userPassword" autocomplete="" v-model="userPassword" class="form-control box-shadow-none" placeholder="Password" />
 				</div>
-				<div class="flex gap-x-3 items-center justify-between">
-					<div class="flex h-6 items-center">
-						<input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
-					</div>
-					<div class="text-sm leading-6">
-						<router-link to="/" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</router-link>
-					</div>
-				</div>
-				<div>
-					<button class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+				<div class="d-flex flex-column py-3 gap-3">
+					<button class="w-100 btn btn-primary py-1 box-shadow-none hover-bg-primary hover-text-light">Login</button>
+					<router-link :to="{ name: 'register' }" class="w-100 text-danger">Click here for reginster</router-link>
 				</div>
 			</form>
-
-			<p class="mt-10 text-center text-sm text-gray-500">
-				Not a member?
-				{{ " " }}
-				<a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign up here</a>
-			</p>
 		</div>
-	</div>
+	</Layout>
 </template>
+
+<style scoped></style>

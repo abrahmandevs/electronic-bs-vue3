@@ -2,7 +2,7 @@
 	import { menuConfigStore } from "../../store/menuConfigStore"
 	import AppBackTopbar from "../headers/AppBackTopbar.vue"
 	import AppSidebar from "../sidebers/AppSidebar.vue"
-	import Breadcrumb from "../breadcrumb/Breadcrumb.vue"
+	import BreadcrumbOld from "../breadcrumb/BreadcrumbOld.vue"
 
 	const menuConfig = menuConfigStore
 </script>
@@ -24,7 +24,7 @@
 					<div class="h-12 shadow px-6 py-2.5 font-semibold text-lg leading-0">{{ pagetitle }}</div>
 				</section>
 				<div class="h-full mx-auto px-3 sm:px-6 py-6 lg:px-8 space-y-5">
-					<Breadcrumb />
+					<BreadcrumbOld />
 					<div>
 						<slot> </slot>
 					</div>
@@ -33,6 +33,3 @@
 		</div>
 	</div>
 </template>
-<style scoped>
-	@import "../../assets/css/tailwind.css";
-</style>

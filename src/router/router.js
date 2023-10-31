@@ -4,14 +4,18 @@ import { authStore } from '../store/authStore'
 
 import NotFound from '../views/NotFound.vue'
 // import Welcome from '../views/Welocme.vue'
-import Home from '../components/views/Home.vue'
-import Shop from '../components/views/shop/Shop.vue'
-import SingleProduct from '../components/views/details/SingleProduct.vue'
+import Home from '../views/public/Home.vue'
+import Shop from '../views/public/shop/Shop.vue'
+import SingleProduct from '../views/public/shop/SingleProduct.vue'
+import Cart from '../views/public/cart/Cart.vue'
+import Checkout from '../views/public/checkout/Checkout.vue'
+import OrderList from '../views/public/order/OrderList.vue'
 
 
 
 
 import Login from '../views/auth/Login.vue'
+import Register from '../views/auth/register.vue'
 import Profile from '../views/auth/Profile.vue'
 
 import Dashboard from '../views/dashboard/Dashboard.vue'
@@ -25,20 +29,78 @@ import Product from '../views/dashboard/product/product.vue'
 import Brand from '../views/dashboard/product/Brand.vue'
 import Unit from '../views/dashboard/product/Unit.vue'
 
+const baseURL = window.location.origin;
+const stylesheets = {
+    public: [
+        `/node_modules/bootstrap/dist/css/bootstrap.min.css`,
+        `/src/assets/css/bootstrap-extensions.css`,
+        `/src/assets/css/style.css`,
+        `/src/assets/css/global.css`,
+    ],
+    user: `/src/assets/css/tailwind.css`,
+};
+
+const cssElement1 = document.getElementById("stylesheet1");
+const cssElement2 = document.getElementById("stylesheet2");
+const cssElement3 = document.getElementById("stylesheet3");
+const cssElement4 = document.getElementById("stylesheet4");
+
+// const defaultStylesheet = stylesheets.public;
+
+
+
 const routes = [
+    // start authenticate
+    {
+        path: '/login', component: Login, name: 'login',
+        meta: {
+            stylesheet: "public",
+            breadcrumb: [
+                {
+                    text: 'Home',
+                    route: 'home'
+                }, {
+                    text: 'Login',
+                    route: 'login'
+                }
+            ]
+        }
+    },
+    {
+        path: '/register', component: Register, name: 'register',
+        meta: {
+            stylesheet: "public",
+            breadcrumb: [
+                {
+                    text: 'Home',
+                    route: 'home'
+                }, {
+                    text: 'Register',
+                    route: 'register'
+                }
+            ]
+        }
+    },
+
+
     // start public
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        meta: { stylesheet: "public" }
     },
     {
         path: '/shop',
         name: 'shop',
         component: Shop,
         meta: {
+            stylesheet: "public",
             breadcrumb: [
                 {
+                    text: 'Home',
+                    route: 'home'
+                }, {
                     text: 'Shop',
                     route: 'shop'
                 }
@@ -50,8 +112,12 @@ const routes = [
         name: 'singleProduct',
         component: SingleProduct,
         meta: {
+            stylesheet: "public",
             breadcrumb: [
                 {
+                    text: 'Home',
+                    route: 'home'
+                }, {
                     text: 'Shop',
                     route: 'shop'
                 },
@@ -62,22 +128,64 @@ const routes = [
             ]
         }
     },
-    // {
-    //     path: '/shop/:id',
-    //     name: 'singleProduct',
-    //     component: SingleProduct
-    // },
-
-    // end public
-
-
-    // start authenticate
     {
-        path: '/login', component: Login, name: 'login',
+        path: '/cart',
+        name: 'cart',
+        component: Cart,
+        meta: {
+            stylesheet: "public",
+            breadcrumb: [
+                {
+                    text: 'Home',
+                    route: 'home'
+                }, {
+                    text: 'Cart',
+                    route: 'cart'
+                }
+            ]
+        }
     },
     {
+        path: '/checkout',
+        name: 'checkout',
+        component: Checkout,
+        meta: {
+            stylesheet: "public",
+            breadcrumb: [
+                {
+                    text: 'Home',
+                    route: 'home'
+                }, {
+                    text: 'Checkout',
+                    route: 'checkout'
+                }
+            ],
+            requiresAuth: true, role: 'admin'
+        }
+    },
+    {
+        path: '/confirm',
+        name: 'comfirm',
+        component: OrderList,
+        meta: {
+            stylesheet: "public",
+            breadcrumb: [
+                {
+                    text: 'Home',
+                    route: 'home'
+                }, {
+                    text: 'Comfirm',
+                    route: 'comfirm'
+                }
+            ],
+            requiresAuth: true, role: 'admin'
+        }
+    },
+
+
+    {
         path: '/dashboard/profile', component: Profile, name: 'profile',
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     // end authenticate
 
@@ -85,37 +193,40 @@ const routes = [
     // ==== start dashboard ====
     {
         path: '/dashboard', name: 'dashboard', component: Dashboard,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     // ==== libery component
     {
         path: '/dashboard/chart', name: 'chart', component: Chart,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     {
         path: '/dashboard/circleProgress', name: 'circleProgress', component: CircleProgress,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     {
         path: '/dashboard/dataTable', name: 'dataTable', component: DataTable,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
 
     // dashboard panel
     {
         path: '/dashboard/product', name: 'product', component: Product,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     {
         path: '/dashboard/brand', name: 'brand', component: Brand,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     {
         path: '/dashboard/unit', name: 'unit', component: Unit,
-        meta: { requiresAuth: true, role: 'admin' }
+        meta: { stylesheet: "user", requiresAuth: true, role: 'admin' }
     },
     // ==== end dashboard ====
-    { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFound },
+    {
+        path: '/:pathMatch(.*)*', name: 'notFound', component: NotFound,
+        meta: { stylesheet: "user" }
+    },
 ]
 
 const router = createRouter({
@@ -125,6 +236,19 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const auth = authStore
+    if (to.meta.stylesheet !== from.meta.stylesheet) {
+        if (to.meta.stylesheet == 'public') {
+            cssElement1.href = stylesheets[to.meta.stylesheet][0];
+            cssElement2.href = stylesheets[to.meta.stylesheet][1];
+            cssElement3.href = stylesheets[to.meta.stylesheet][2];
+            cssElement4.href = stylesheets[to.meta.stylesheet][3];
+        } else {
+            cssElement1.href = stylesheets[to.meta.stylesheet];
+            cssElement2.href = '';
+            cssElement3.href = '';
+            cssElement4.href = '';
+        }
+    }
     // to and from are both route objects. must call `next`.
     if (to.meta.requiresAuth && !auth.isAuthenticated) {
         // dialog.openModal()

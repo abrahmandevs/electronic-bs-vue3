@@ -1,51 +1,154 @@
-import { reactive, computed } from "vue";
+import { reactive } from "vue";
+import router from '../router/router'
 import { authStore } from './authStore'
-// const auth = authStore
+import axios from "axios";
+import { useToast } from "vue-toastification"
+
+const toast = useToast()
+// // const auth = authStore
 
 
-const wishlistStore = reactive({
+const wishlist = reactive({
+    items: [],
 
-    items: {},
-    totalItems: computed(() => {
-        let total = 0
-        for (let id in wishlistStore.items) {
-            total += wishlistStore.items[id].quantity
+    isWishlisted(product) {
+        return this.items.includes(product.id)
+    },
+    async fetchWishlist() {
+        const apiUrl = 'http://localhost:8000/api/wishlist'
+        const token = authStore.getUserToken()
+        if (!token) {
+            router.push('/login')
+            return
         }
-        return total
-    }),
-    // add items
-    addItem(product) {
-        if (!this.items[product.id]) {
-            this.items[product.id] = {
-                product,
-                quantity: 1,
-                wishlist: true
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": 'application/json'
+                },
+            })
+            if (!response.ok) {
+                throw new Error('Network response was not ok')
             }
-        } else {
-            delete this.items[product.id]
+            const wishlistData = await response.json()
+            this.items = wishlistData.wishlist
+
+        } catch (error) {
+            console.log('error fetching wishlist', error)
         }
-        this.saveCartInLocalStorage()
+    },
+
+
+    async toggleWishlist(product) {
+        let apiUrl = 'http://localhost:8000/api/wishlist'
+        let method = 'POST'
+        const token = authStore.getUserToken()
+        if (!token) {
+            router.push('/login')
+            return
+        }
+
+        let payload = {
+            product_id: product.id
+        }
+        if (!this.isWishlisted(product)) {
+            // add items to wishlist
+            this.items.push(product.id)
+
+        } else {
+            // remove item from wishlist
+            this.items = this.items.filter(id => id != product.id)
+            apiUrl += `/${product.id}`
+            method = 'DELETE'
+            payload: { }
+        }
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: method,
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(payload),
+            })
+
+            if (!response.ok) {
+                toast.error(`Network response was not ok`)
+                throw new Error('Network response was not ok')
+            }
+            //const data = await response.json()
+            // console.log(data);
+        } catch (error) {
+            console.log('error toggle wishlist error', error)
+        }
+    },
+    wishlistStatus(product) {
+        return this.isWishlisted(product) ? true : false
     },
     // remove items
-    removeItem(index) {
-        if (this.items[index]) {
-            delete this.items[index]
-        }
-        this.saveCartInLocalStorage()
-    },
-    emptyCart() {
-        this.items = {}
-        this.saveCartInLocalStorage()
-    },
+    async removeItem(index) {
+        try {
 
-    // save in to localstorage
-    saveCartInLocalStorage() {
-        localStorage.setItem('wishlist', JSON.stringify(this.items))
+            const apiUrl = `http://localhost:8000/api/wishlist/${index}`
+            const token = authStore.getUserToken()
+            if (!token) {
+                console.log('token nay');
+                return
+            }
+
+            let payload = {
+                product_id: index
+            }
+            const response = await fetch(apiUrl, {
+                method: "DELETE",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(payload),
+            })
+            if (!response.ok) {
+                throw new Error('Network response was not ok')
+            }
+            this.items = this.items.filter(id => id != index)
+        } catch (error) {
+            console.log(error);
+        }
     },
-    // get data into localStorage
-    getCartLocalStorage() {
-        this.items = JSON.parse(localStorage.getItem('wishlist')) || {}
-    },
+    async clearItems() {
+
+        try {
+            const apiUrl = `http://localhost:8000/api/wishlist`
+            const token = authStore.getUserToken()
+            if (!token) {
+                console.log('token nay');
+                return
+            }
+            // let payload = {
+            //     product_id: index
+            // }
+            const response = await fetch(apiUrl, {
+                method: "DELETE",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": 'application/json'
+                },
+                // body: JSON.stringify(payload),
+            })
+            if (!response.ok) {
+                throw new Error('Network response was not ok')
+            }
+            this.items = this.items.filter(id => id != index)
+        } catch (error) {
+            console.log(error);
+        }
+        this.items = []
+    }
+
 })
-wishlistStore.getCartLocalStorage()
-export { wishlistStore }
+
+export { wishlist }
