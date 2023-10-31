@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+	const baseUrl = window.location.origin
+</script>
 
 <template>
 	<!--popular-blog-posts-section-->
@@ -16,7 +18,7 @@
 				<div class="col-sm-12 col-md-4 m-0">
 					<div class="card rounded-0 border-0 group-hover">
 						<div class="overflow-hidden position-relative">
-							<img class="img-fluid" src="images/demo/blog-2.jpg " />
+							<img class="img-fluid" :src="`${baseUrl}/public/images/demo/blog-2.jpg `" />
 							<div class="card-img-overlay rounded-0 p-0 bg-dark bg-opacity-0 top-100 hover-bg-opacity-20 hover-top-0 transition-500"></div>
 						</div>
 						<div class="card-body small p-0 text-capitalize">
@@ -35,7 +37,7 @@
 				<div class="d-none d-md-block col-md-4 m-0">
 					<div class="card rounded-0 border-0 group-hover">
 						<div class="overflow-hidden position-relative">
-							<img class="img-fluid" src="images/demo/blog-1.jpg " />
+							<img class="img-fluid" :src="`${baseUrl}/public/images/demo/blog-1.jpg `" />
 							<div class="card-img-overlay rounded-0 p-0 bg-dark bg-opacity-0 top-100 hover-bg-opacity-20 hover-top-0 transition-500"></div>
 						</div>
 						<div class="card-body small text-capitalize p-0">
@@ -54,7 +56,7 @@
 				<div class="d-none d-md-block col-md-4 m-0">
 					<div class="card rounded-0 border-0 group-hover">
 						<div class="overflow-hidden position-relative">
-							<img class="img-fluid" src="images/demo/blog-3.jpg " />
+							<img class="img-fluid" :src="`${baseUrl}/public/images/demo/blog-3.jpg `" />
 							<div class="card-img-overlay rounded-0 p-0 bg-dark bg-opacity-0 top-100 hover-bg-opacity-20 hover-top-0 transition-500"></div>
 						</div>
 						<div class="card-body small text-capitalize p-0">
