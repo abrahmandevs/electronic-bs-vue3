@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+	const baseUrl = window.location.origin
+</script>
 
 <template>
 	<!--game and camera accessories blank-section-->
@@ -12,7 +14,7 @@
 				<div class="col-10 col-sm-6 col-md-6 col-lg-5 p-0 text-capitalize">
 					<div class="card rounded-0 group-hover cursor-pointer p-2 h-100">
 						<div class="overflow-hidden position-relative">
-							<img class="img-fluid" src="images/demo/electronic-gca1.jpg" />
+							<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca1.jpg`" />
 							<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 								<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 									<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -50,7 +52,7 @@
 				<div class="col-10 col-sm-6 d-md-none p-0 text-capitalize h-100">
 					<div class="card rounded-0 group-hover h-100 cursor-pointer p-2">
 						<div class="overflow-hidden position-relative">
-							<img class="img-fluid" src="images/demo/electronic-gca8.jpg" />
+							<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca8.jpg`" />
 							<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 								<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 									<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -90,7 +92,7 @@
 						<div class="col-10 col-sm-4 col-md-6 col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca2.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca2.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -119,7 +121,7 @@
 						<div class="col-10 col-sm-4 col-md-6 col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca3.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca3.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -148,7 +150,7 @@
 						<div class="col-10 col-sm-4 col-md-6 col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca4.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca4.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -177,7 +179,7 @@
 						<div class="col-10 col-sm-4 col-md-6 col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca5.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca5.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -206,7 +208,7 @@
 						<div class="col-10 col-sm-4 d-md-none d-lg-block col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca6.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca6.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
@@ -232,7 +234,7 @@
 						<div class="col-10 col-sm-4 d-md-none d-lg-block col-lg-4 p-0">
 							<div class="card rounded-0 group-hover p-2 h-100">
 								<div class="overflow-hidden position-relative">
-									<img class="img-fluid" src="images/demo/electronic-gca7.jpg " />
+									<img class="img-fluid" :src="`${baseUrl}/public/images/demo/electronic-gca7.jpg `" />
 									<div class="card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 										<div class="btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500">
 											<a class="btn btn-light p-0 border-0"><i class="p-2 fas fa-random bg-white border"></i></a>
