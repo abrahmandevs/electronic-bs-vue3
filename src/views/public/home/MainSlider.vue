@@ -8,7 +8,7 @@
 		<div class="container-lg">
 			<div class="row gx-lg-2 gap-3 gap-lg-0">
 				<div class="col-lg-8">
-					<div id="carouselExampleIndicators" class="carousel slide carousel-fade bg-no-repeat bg-size-cover bg-position-center" data-bs-ride="carousel" :style="`background-image: url(${baseUrl}/assets/images/demo/bg-main-slide.jpg); height: 445px; width: auto; overflow: hidden`">
+					<div id="carouselExampleIndicators" class="carousel slide carousel-fade bg-no-repeat bg-size-cover bg-position-center" data-bs-ride="carousel" :style="`background-image: url(${baseUrl}/public/images/demo/bg-main-slide.jpg); height: 445px; width: auto; overflow: hidden`">
 						<div class="carousel-indicators">
 							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -27,7 +27,7 @@
 									</div>
 									<div class="col-md-7 p-0">
 										<div class="mt-5 pt-md-3 mt-xl-0 pt-xl-0">
-											<img class="d-block img-fluid mt-5 pt-lg-5" :src="`${baseUrl}/assets/images/demo/slide1-electronic-2.png`" alt="image " />
+											<img class="d-block img-fluid mt-5 pt-lg-5" :src="`${baseUrl}/public/images/demo/slide1-electronic-2.png`" alt="image " />
 										</div>
 									</div>
 								</div>
@@ -43,7 +43,7 @@
 									</div>
 									<div class="col-md-7 p-0">
 										<div class="mt-4 mx-auto" style="max-height: 500px !important; max-width: 300px !important">
-											<img class="d-block img-fluid" :src="`${baseUrl}/assets/images/demo/slide2-electronic2.png`" alt="image " />
+											<img class="d-block img-fluid" :src="`${baseUrl}/public/images/demo/slide2-electronic2.png`" alt="image " />
 										</div>
 									</div>
 								</div>
@@ -59,7 +59,7 @@
 									</div>
 									<div class="col-md-7 p-0">
 										<div class="mt-4 mt-md-5 pt-md-5 mx-auto m-auto" style="max-height: 500px !important; max-width: 300px !important">
-											<img class="d-block img-fluid" :src="`${baseUrl}/assets/images/demo/slide3-electronic2.png`" alt="image " />
+											<img class="d-block img-fluid" :src="`${baseUrl}/public/images/demo/slide3-electronic2.png`" alt="image " />
 										</div>
 									</div>
 								</div>
@@ -71,7 +71,7 @@
 					<div class="row gap-2 gap-sm-0 gap-lg-2">
 						<div class="col-sm-6 col-lg-12">
 							<div class="card rounded-0 border-0 position-relative overflow-hidden group-hover h-100">
-								<img class="img-fluid hover-scale-115 transition-500" :src="`${baseUrl}/assets/images/demo/banner-1-electronic-1.jpg`" alt="icon" />
+								<img class="img-fluid hover-scale-115 transition-500" :src="`${baseUrl}/public/images/demo/banner-1-electronic-1.jpg`" alt="icon" />
 								<div class="card-img-overlay position-absolute text-start mt-4 ms-3">
 									<p class="text-uppercase text-red-danger mb-0 fw-bold">new arrivals</p>
 									<p class="text-uppercase text-black mb-3 h4 fw-bolder">
@@ -89,7 +89,7 @@
 						</div>
 						<div class="col-sm-6 col-lg-12">
 							<div class="card rounded-0 border-0 position-relative overflow-hidden group-hover h-100">
-								<img class="img-fluid hover-scale-115 transition-500" :src="`${baseUrl}/assets/images/demo/banner-5-electronic-1.jpg`" alt="icon" />
+								<img class="img-fluid hover-scale-115 transition-500" :src="`${baseUrl}/public/images/demo/banner-5-electronic-1.jpg`" alt="icon" />
 								<div class="card-img-overlay position-absolute text-start mt-4 ms-3">
 									<p class="text-uppercase text-red-danger mb-0 fw-bold">lg life good</p>
 									<p class="text-uppercase text-black mb-3 h4 fw-bolder">a perfect <br class=" " />wash</p>

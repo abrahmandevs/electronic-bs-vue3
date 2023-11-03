@@ -10,7 +10,7 @@
 				<div class="col-10 col-md-6">
 					<div class="card bg-dark rounded-0 overflow-hidden border-0 group-hover">
 						<a href="#" class="stretched-link"></a>
-						<img class="card-img img-fluid hover-scale-115 transition-300" src="../assets/images/demo/banner-2-electronic-2.jpg" alt="banner-icon" />
+						<img class="card-img img-fluid hover-scale-115 transition-300" src="images/demo/banner-2-electronic-2.jpg" alt="banner-icon" />
 						<div class="card-img-overlay text-uppercase text-white ms-md-4 mt-md-4">
 							<h6 class="small my-1 text-red-danger">new arrivals</h6>
 							<h4 class="mb-0 text-dark">dji mavic pro</h4>
@@ -24,7 +24,7 @@
 				<div class="col-10 col-md-6">
 					<div class="card bg-dark rounded-0 overflow-hidden border-0 group-hover">
 						<a href="#" class="stretched-link"></a>
-						<img class="card-img img-fluid hover-scale-115 transition-300" src="../assets/images/demo/banner-3-electronic-2.jpg" alt="banner-icon" />
+						<img class="card-img img-fluid hover-scale-115 transition-300" src="images/demo/banner-3-electronic-2.jpg" alt="banner-icon" />
 						<div class="card-img-overlay text-uppercase text-white ms-md-4 mt-md-4">
 							<h6 class="small my-1">on the weekend</h6>
 							<h4 class="mb-0">on sale now</h4>

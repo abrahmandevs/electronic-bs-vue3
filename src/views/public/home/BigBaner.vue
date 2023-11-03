@@ -1,6 +1,4 @@
-<script setup>
-	const baseUrl = window.location.origin
-</script>
+<script setup></script>
 
 <template>
 	<!--first-banner -section-->
@@ -12,7 +10,7 @@
 				<div class="col-10 col-md-6">
 					<div class="card bg-dark rounded-0 overflow-hidden border-0 group-hover">
 						<a href="#" class="stretched-link"></a>
-						<img class="img-fluid hover-scale-115 transition-300 card-img" :src="`${baseUrl}/assets/images/demo/banner-1-electronic-2.jpg`" alt="banner-icon" />
+						<img class="img-fluid hover-scale-115 transition-300 card-img" src="images/demo/banner-1-electronic-2.jpg" alt="banner-icon" />
 						<div class="card-img-overlay text-uppercase text-white ms-md-4 mt-md-4">
 							<h6 class="small my-1 text-red-danger">new arrivals</h6>
 							<h4 class="mb-0 text-black">galaxy tab</h4>
@@ -26,7 +24,7 @@
 				<div class="col-10 col-md-6">
 					<div class="card bg-dark rounded-0 overflow-hidden border-0 group-hover">
 						<a href="#" class="stretched-link"></a>
-						<img class="img-fluid hover-scale-115 transition-300 card-img" :src="`${baseUrl}/assets/images/demo/banner-2-electronic-1.jpg`" alt="banner-icon" />
+						<img class="img-fluid hover-scale-115 transition-300 card-img" src="images/demo/banner-2-electronic-1.jpg" alt="banner-icon" />
 						<div class="card-img-overlay text-uppercase text-white ms-md-4 mt-md-4">
 							<h6 class="small my-1 text-red-danger">the best laptop</h6>
 							<h4 class="mb-0">sony vaio</h4>
