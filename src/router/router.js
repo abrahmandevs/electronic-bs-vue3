@@ -45,7 +45,7 @@ const cssElement2 = document.getElementById("stylesheet2");
 const cssElement3 = document.getElementById("stylesheet3");
 const cssElement4 = document.getElementById("stylesheet4");
 
-// const defaultStylesheet = stylesheets.public;
+const defaultStylesheet = stylesheets.public;
 
 
 
@@ -238,10 +238,10 @@ router.beforeEach((to, from, next) => {
     const auth = authStore
     if (to.meta.stylesheet !== from.meta.stylesheet) {
         if (to.meta.stylesheet == 'public') {
-            cssElement1.href = baseURL + stylesheets[to.meta.stylesheet][0];
-            cssElement2.href = baseURL + stylesheets[to.meta.stylesheet][1];
-            cssElement3.href = baseURL + stylesheets[to.meta.stylesheet][2];
-            cssElement4.href = baseURL + stylesheets[to.meta.stylesheet][3];
+            cssElement1.href = baseURL + stylesheets[to.meta.stylesheet][0] || defaultStylesheet[0];
+            cssElement2.href = baseURL + stylesheets[to.meta.stylesheet][1] || defaultStylesheet[1];
+            cssElement3.href = baseURL + stylesheets[to.meta.stylesheet][2] || defaultStylesheet[2];
+            cssElement4.href = baseURL + stylesheets[to.meta.stylesheet][3] || defaultStylesheet[3];
         } else {
             cssElement1.href = stylesheets[to.meta.stylesheet];
             cssElement2.href = '';
