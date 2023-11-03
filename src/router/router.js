@@ -30,6 +30,13 @@ import Brand from '../views/dashboard/product/Brand.vue'
 import Unit from '../views/dashboard/product/Unit.vue'
 
 const baseURL = window.location.origin;
+// const stylesheets = [
+//     { public: '/node_modules/bootstrap/dist/css/bootstrap.min.css' },
+//     { public: '/src/assets/css/bootstrap-extensions.css' },
+//     { public: '/src/assets/css/style.css' },
+//     { public: '/src/assets/css/global.css' },
+//     { user: '/src/assets/css/tailwind.css' },
+// ];
 const stylesheets = {
     public: [
         `/node_modules/bootstrap/dist/css/bootstrap.min.css`,
@@ -237,17 +244,38 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const auth = authStore
     if (to.meta.stylesheet !== from.meta.stylesheet) {
-        if (to.meta.stylesheet == 'public') {
-            cssElement1.href = baseURL + stylesheets[to.meta.stylesheet][0] || defaultStylesheet[0];
-            cssElement2.href = baseURL + stylesheets[to.meta.stylesheet][1] || defaultStylesheet[1];
-            cssElement3.href = baseURL + stylesheets[to.meta.stylesheet][2] || defaultStylesheet[2];
-            cssElement4.href = baseURL + stylesheets[to.meta.stylesheet][3] || defaultStylesheet[3];
-        } else {
-            cssElement1.href = stylesheets[to.meta.stylesheet];
-            cssElement2.href = '';
-            cssElement3.href = '';
-            cssElement4.href = '';
+
+        if (to.meta.stylesheet !== from.meta.stylesheet) {
+            if (to.meta.stylesheet == 'public') {
+                cssElement1.href = baseURL + stylesheets[to.meta.stylesheet][0] || defaultStylesheet[0];
+                cssElement2.href = baseURL + stylesheets[to.meta.stylesheet][1] || defaultStylesheet[1];
+                cssElement3.href = baseURL + stylesheets[to.meta.stylesheet][2] || defaultStylesheet[2];
+                cssElement4.href = baseURL + stylesheets[to.meta.stylesheet][3] || defaultStylesheet[3];
+            } else {
+                cssElement1.href = stylesheets[to.meta.stylesheet];
+                cssElement2.href = '';
+                cssElement3.href = '';
+                cssElement4.href = '';
+            }
         }
+
+        // const head = document.getElementsByTagName('head')
+        // stylesheets.forEach((sheets, index) => {
+        //     if (sheets.hasOwnProperty('public' && to.meta.stylesheet == 'public')) {
+        //         const link = document.createElement('link');
+        //         link.rel = 'stylesheet';
+        //         link.type = 'text/css';
+        //         link.href = sheets.public;
+        //         head.appendChild(link);
+        //     } else {
+        //         const link = document.createElement('link');
+        //         link.rel = 'stylesheet';
+        //         link.type = 'text/css';
+        //         link.href = sheets.user;
+        //         head.appendChild(link);
+        //     }
+        // });
+
     }
     // to and from are both route objects. must call `next`.
     if (to.meta.requiresAuth && !auth.isAuthenticated) {
@@ -262,9 +290,9 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
-    if (transition.to.path === '/*') {
-        window.location.href = '/404.html'
-    }
+    // if (transition.to.path === '/*') {
+    //     window.location.href = '/404.html'
+    // }
 })
 
 
