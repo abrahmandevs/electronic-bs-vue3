@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+	const baseUrl = window.location.origin
+</script>
 
 <template>
 	<!--first-banner -section-->

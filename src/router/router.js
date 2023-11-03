@@ -238,10 +238,10 @@ router.beforeEach((to, from, next) => {
     const auth = authStore
     if (to.meta.stylesheet !== from.meta.stylesheet) {
         if (to.meta.stylesheet == 'public') {
-            cssElement1.href = stylesheets[to.meta.stylesheet][0];
-            cssElement2.href = stylesheets[to.meta.stylesheet][1];
-            cssElement3.href = stylesheets[to.meta.stylesheet][2];
-            cssElement4.href = stylesheets[to.meta.stylesheet][3];
+            cssElement1.href = baseURL + stylesheets[to.meta.stylesheet][0];
+            cssElement2.href = baseURL + stylesheets[to.meta.stylesheet][1];
+            cssElement3.href = baseURL + stylesheets[to.meta.stylesheet][2];
+            cssElement4.href = baseURL + stylesheets[to.meta.stylesheet][3];
         } else {
             cssElement1.href = stylesheets[to.meta.stylesheet];
             cssElement2.href = '';

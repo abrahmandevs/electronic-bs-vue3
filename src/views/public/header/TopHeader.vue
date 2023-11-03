@@ -8,8 +8,7 @@
 
 	const userEmail = ref("john@doe.com")
 	const userPassword = ref("12345")
-	import "bootstrap/dist/css/bootstrap.min.css"
-	import "bootstrap"
+	
 </script>
 <template>
 	<!--header-section-->

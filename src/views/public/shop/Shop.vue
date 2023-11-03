@@ -15,11 +15,11 @@
 
 	onBeforeMount(() => {
 		axios
-			// .get("https://dummyjson.com/products?limit=30")
-			.get("http://127.0.0.1:8000/api/products")
+			.get("https://dummyjson.com/products?limit=30")
+			// .get("http://127.0.0.1:8000/api/products")
 			.then((res) => {
-				products.value = res.data
-				// products.value = res.data.products
+				// products.value = res.data
+				products.value = res.data.products
 			})
 			.catch((error) => console.log(error))
 	})
@@ -414,8 +414,8 @@
 								<div class="card rounded-0 group-hover p-2 h-100">
 									<div class="overflow-hidden position-relative">
 										<div class="overflow-hidden text-center w-100" style="height: 100px">
-											<img class="h-100 w-100 object-fit-contain" :src="product['image']" />
-											<!-- <img class="h-100 w-100 object-fit-contain" :src="product['thumbnail']" /> -->
+											<!-- <img class="h-100 w-100 object-fit-contain" :src="product['image']" /> -->
+											<img class="h-100 w-100 object-fit-contain" :src="product['thumbnail']" />
 										</div>
 										<div class="hidden card-img-overlay rounded-0 d-flex p-0 bg-opacity-0 justify-content-end align-items-end bg-dark hover-bg-opacity-10 transition-1000">
 											<div class="position-absolute top- bottom-0 end-0 btn-group-vertical transform-rotateY-90 hover-transform-rotateY-0 transition-500" style="z-index: 100">
