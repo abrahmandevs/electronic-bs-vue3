@@ -4,8 +4,8 @@
 	import { authStore } from "../../store/authStore"
 	const auth = authStore
 
-	const userEmail = ref("john@doe.com")
-	const userPassword = ref("12345")
+	const userEmail = ref("kminchelle") //kminchelle , john@doe.com
+	const userPassword = ref("0lelplR") //0lelplR, 12345
 </script>
 
 <template>
