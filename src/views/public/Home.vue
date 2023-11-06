@@ -15,15 +15,6 @@
 <template>
 	<Layout>
 		<MainSlider />
-		<Support />
-		<ProductCategory />
-		<Baner2 />
-		<SmartPhone />
-		<BigBaner />
-		<Appliances />
-		<BigBaner2 />
-		<Accessories />
-		<Blog />
-		<Brand />
+		// <Support /> // <ProductCategory /> // <Baner2 /> // <SmartPhone /> // <BigBaner /> // <Appliances /> // <BigBaner2 /> // <Accessories /> // <Blog /> // <Brand />
 	</Layout>
 </template>
