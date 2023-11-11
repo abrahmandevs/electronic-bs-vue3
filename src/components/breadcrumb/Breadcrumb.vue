@@ -1,6 +1,6 @@
 <script setup>
 	import { defineProps } from "vue"
-	import { ChevronRightIcon } from "@heroicons/vue/24/outline"
+	import { ChevronRightIcon, HomeIcon } from "@heroicons/vue/20/solid"
 	import { useRoute } from "vue-router"
 	const route = useRoute()
 	const fullPath = route.meta.breadcrumb
@@ -29,11 +29,14 @@
 <template>
 	<div class="space-y-0.5">
 		<h1 class="text-xl font-medium capitalize" :class="labelClass">{{ pathTitle[0].text }}</h1>
-		<div class="flex items-center gap-x-1 text-xs">
-			<template v-for="(path, key, index) in fullPath">
-				<router-link :to="{ name: path['route'] }" class="capitalize font-medium" :class="path == $route.name ? activeClass : pathClass"> {{ path["text"] }}</router-link>
-				<ChevronRightIcon v-if="key !== fullPath.length - 1" class="h-3.5 w-auto" :class="iconClass" />
-			</template>
+		<div class="d-flex align-items-center gap-x-1 text-xs">
+			<div v-for="(path, key, index) in fullPath" class="shrink-0 d-flex align-items-center" :key="index">
+				<router-link :to="{ name: path['route'] }" class="capitalize font-medium h6 mb-0" :class="path == $route.name ? activeClass : pathClass">
+					<HomeIcon v-if="'home' == path['route']" class="h-4 w-auto" :class="iconClass" />
+					<template v-if="'home' != path['route']">{{ path["text"] }} </template>
+				</router-link>
+				<ChevronRightIcon v-if="key !== fullPath.length - 1" class="h-4 w-auto" :class="iconClass" />
+			</div>
 		</div>
 	</div>
 </template>

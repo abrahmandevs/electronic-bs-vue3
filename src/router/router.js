@@ -2,32 +2,32 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import { authStore } from '../store/authStore'
 
-import NotFound from '../views/NotFound.vue'
-// import Welcome from '../views/Welocme.vue'
-import Home from '../views/public/Home.vue'
-import Shop from '../views/public/shop/Shop.vue'
-import SingleProduct from '../views/public/shop/SingleProduct.vue'
-import Cart from '../views/public/cart/Cart.vue'
-import Checkout from '../views/public/checkout/Checkout.vue'
-import OrderList from '../views/public/order/OrderList.vue'
+import NotFound from '../pages/NotFound.vue'
+// import Welcome from '../pages/Welocme.vue'
+import Home from '../pages/Home.vue'
+import Shop from '../pages/shop/Shop.vue'
+import SingleProduct from '../pages/shop/SingleProduct.vue'
+import Cart from '../pages/cart/Cart.vue'
+import Checkout from '../pages/checkout/Checkout.vue'
+import OrderList from '../pages/order/OrderList.vue'
 
 
 
 
-import Login from '../views/auth/Login.vue'
-import Register from '../views/auth/register.vue'
-import Profile from '../views/auth/Profile.vue'
+import Login from '../pages/auth/Login.vue'
+import Register from '../pages/auth/register.vue'
+import Profile from '../pages/auth/Profile.vue'
 
-import Dashboard from '../views/dashboard/Dashboard.vue'
+import Dashboard from '../pages/dashboard/Dashboard.vue'
 
-import Chart from '../views/dashboard/components/Chart.vue'
-import CircleProgress from '../views/dashboard/components/CircleProgress.vue'
-import DataTable from '../views/dashboard/components/DataTable.vue'
+import Chart from '../pages/dashboard/components/Chart.vue'
+import CircleProgress from '../pages/dashboard/components/CircleProgress.vue'
+import DataTable from '../pages/dashboard/components/DataTable.vue'
 
 
-import Product from '../views/dashboard/product/product.vue'
-import Brand from '../views/dashboard/product/Brand.vue'
-import Unit from '../views/dashboard/product/Unit.vue'
+import Product from '../pages/dashboard/product/product.vue'
+import Brand from '../pages/dashboard/product/Brand.vue'
+import Unit from '../pages/dashboard/product/Unit.vue'
 import { onMounted } from "vue";
 
 const baseURL = window.location.origin;
@@ -291,9 +291,6 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
-    // if (transition.to.path === '/*') {
-    //     window.location.href = '/404.html'
-    // }
 })
 
 

@@ -2,6 +2,8 @@ import { reactive, computed } from "vue";
 import { authStore } from './authStore'
 import { order } from "./productOrderStore";
 import { useToast } from "vue-toastification"
+import router from '../router/router'
+
 const toast = useToast()
 // const auth = authStore
 
@@ -19,6 +21,11 @@ const cartStore = reactive({
         if (!token) {
             router.push('/login')
             return
+        }
+        if (0 == Object.keys(this.items).length) {
+            toast.info(`Add products`)
+            console.log(router.currentRoute.value.meta.requiresAuth);
+            return true
         }
         const payload = {
             coupon: this.couponCode
@@ -131,7 +138,11 @@ const cartStore = reactive({
     },
     // checkOut product
     checkOut() {
-        console.log('from checkout');
+        if (0 == Object.keys(this.items).length) {
+            toast.info(`Add products`)
+            router.push(router.currentRoute.value.name)
+            return true
+        }
         order.placeOrder(this.totalPrice, this.items)
     }
 })

@@ -34,7 +34,7 @@
 		},
 		btnClass: {
 			type: String,
-			default: "",
+			default: "text-black bg-white",
 		},
 		stroke: {
 			type: [Number],
@@ -44,12 +44,12 @@
 		// Slide per view
 		slidesPerView: {
 			type: [String, Number],
-			default: 3,
+			default: 4,
 		},
 		// Space between
 		spaceBetween: {
 			type: [String, Number],
-			default: 20,
+			default: 10,
 		},
 		// loop
 		isLoop: {
@@ -83,11 +83,11 @@
 
 		isDynamicBullets: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 		isClickable: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 	})
 </script>
@@ -95,7 +95,7 @@
 <template>
 	<Swiper
 		:class="name"
-		class=""
+		class="border-0"
 		:autoplay="{
 			delay: duration,
 			disableOnInteraction: isDisableOnInteraction,
@@ -114,16 +114,15 @@
 		effect="fade"
 		:slides-per-view="slidesPerView"
 		:space-between="spaceBetween"
-		virtual
 	>
 		<!-- <SwiperController :slider="slider" /> -->
 		<slot name="controller">
-			<div class="absolute inset-0 z-10 flex items-center justify-between gap-1">
-				<button class="px-3 py-1 rounded text-black bg-white shrink-0 flex items-center justify-center" @click.stop="slider.slidePrev()">
-					<ChevronLeftIcon class="h-6 w-auto" :style="`stroke-width:${stroke} ;`" />
+			<div class="absolute inset-0 z-2 flex items-center justify-between gap-1" :class="btnGroupClass">
+				<button :class="btnClass" class="px-3 py-1 rounded shrink-0 flex items-center justify-center" @click.stop="slider.slidePrev()">
+					<ChevronLeftIcon class="w-auto" :style="`stroke-width:${stroke} ;`" style="height: 1.5rem" />
 				</button>
-				<button class="px-3 py-1 rounded text-black bg-white shrink-0 flex items-center justify-center" @click.stop="slider.slideNext()">
-					<ChevronRightIcon class="h-6 w-auto" :style="`stroke-width:${stroke} ;`" />
+				<button :class="btnClass" class="px-3 py-1 rounded shrink-0 flex items-center justify-center" @click.stop="slider.slideNext()">
+					<ChevronRightIcon class="w-auto" :style="`stroke-width:${stroke} ;`" style="height: 1.5rem" />
 				</button>
 			</div>
 		</slot>
